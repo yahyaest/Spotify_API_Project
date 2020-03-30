@@ -11,7 +11,7 @@ token = util.prompt_for_user_token(username, scope, oauth.client_id, oauth.clien
 
 if token:
     sp = spotipy.Spotify(auth=token)
-    results = sp.current_user_saved_tracks()
+    results = sp.current_user_saved_tracks(limit=50)
     i = 0
     for item in results['items']:
         i = i + 1
